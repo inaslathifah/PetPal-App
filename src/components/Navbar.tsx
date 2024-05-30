@@ -1,4 +1,3 @@
-import logo from "/assets/logo.png";
 import { Link } from "react-router-dom";
 import { Input } from "./ui/input";
 import { Search } from "lucide-react";
@@ -10,7 +9,7 @@ const Navbar = () => {
     <header className="w-full shadow py-1 bg-[#BBD0CB] sticky top-0">
       <div className="flex items-center justify-between mx-20">
         <Link to={"/"}>
-          <img src={logo} alt="logo-web" width={60} />
+          <img src="/assets/logo.png" alt="logo-web" width={60} />
         </Link>
         <div className="flex items-center rounded-md px-2 bg-white">
           <Search />
