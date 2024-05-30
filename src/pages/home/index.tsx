@@ -1,10 +1,8 @@
-import Layout from "@/components/Layout";
-
 const Home = () => {
   return (
-    <Layout>
+    <div>
       <h1>ini halaman home</h1>
-    </Layout>
+    </div>
   );
 };
 
