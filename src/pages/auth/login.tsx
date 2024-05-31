@@ -3,7 +3,14 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
 import registerImage from "/assets/auth-image.png";
@@ -32,7 +39,10 @@ const Login = () => {
           <h1 className="text-2xl font-semibold text-center">Sign Up</h1>
           <div className="w-4/5 mx-auto">
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="space-y-8"
+              >
                 <FormField
                   control={form.control}
                   name="email"
@@ -53,27 +63,41 @@ const Login = () => {
                     <FormItem>
                       <FormLabel>Password</FormLabel>
                       <FormControl>
-                        <Input type="password" placeholder="******" {...field} />
+                        <Input
+                          type="password"
+                          placeholder="******"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="w-full rounded-full bg-gradient-to-r from-[#036DA1] via-[#64A1B7] to-[#C6D6CE] hover:from-[#036DA1]/90 hover:to-[#C6D6CE]/90">
+                <Button
+                  type="submit"
+                  className="w-full rounded-full bg-gradient-to-r from-[#036DA1] via-[#64A1B7] to-[#C6D6CE] hover:from-[#036DA1]/90 hover:to-[#C6D6CE]/90"
+                >
                   Sign In
                 </Button>
               </form>
             </Form>
             <h1 className="text-center my-5">
               Don’t have an account?{" "}
-              <Link to={"/register"} className="text-[#036DA1] hover:text-[#64A1B7]">
+              <Link
+                to={"/register"}
+                className="text-[#036DA1] hover:text-[#64A1B7]"
+              >
                 Sign Up
               </Link>
             </h1>
           </div>
         </div>
         <div className="w-1/2 relative hidden sm:block">
-          <img src={registerImage} alt="register" className="w-[40vw] absolute hidden sm:block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+          <img
+            src={registerImage}
+            alt="register"
+            className="w-[40vw] absolute hidden sm:block top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          />
         </div>
       </div>
     </main>
