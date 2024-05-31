@@ -35,7 +35,7 @@ const AllProducts = () => {
 
   return (
     <Layout>
-      <div className="container mx-auto h-full py-8 flex items-start justify-center flex-col gap-y-8">
+      <div className="container mx-auto h-full py-8 flex items-end justify-center flex-col gap-y-8">
         <Select>
           <SelectTrigger className="w-[180px]">
             <SelectValue placeholder="Sort By" />
@@ -46,7 +46,7 @@ const AllProducts = () => {
             <SelectItem value="system">Price</SelectItem>
           </SelectContent>
         </Select>
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {data.map((items) => {
             return (
               <Link to={"/"} key={items.id}>
