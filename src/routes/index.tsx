@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import ProtectedRoute from "./protected-route";
 import Register from "@/pages/auth/register";
+import AllProducts from "@/pages/products";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: "/register",
           element: <Register />,
+        },
+        {
+          path: "/products",
+          element: <AllProducts />,
         },
       ],
     },
