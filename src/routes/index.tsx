@@ -3,6 +3,7 @@ import Home from "@/pages/home";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import ProtectedRoute from "./protected-route";
+import Register from "@/pages/auth/register";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -16,6 +17,10 @@ const App = () => {
         {
           path: "/login",
           element: <Login />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
         },
       ],
     },

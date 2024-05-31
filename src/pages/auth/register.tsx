@@ -9,23 +9,24 @@ import { Input } from "@/components/ui/input";
 import registerImage from "/assets/auth-image.png";
 import logoImage from "/assets/logo.png";
 import { Link } from "react-router-dom";
-import { loginSchema } from "@/utils/apis/auth";
+import { registerSchema } from "@/utils/apis/auth";
 
-const Login = () => {
-  const form = useForm<z.infer<typeof loginSchema>>({
-    resolver: zodResolver(loginSchema),
+const Register = () => {
+  const form = useForm<z.infer<typeof registerSchema>>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
+      fullname: "",
       email: "",
       password: "",
     },
   });
 
-  function onSubmit(values: z.infer<typeof loginSchema>) {
+  function onSubmit(values: z.infer<typeof registerSchema>) {
     console.log(values);
   }
 
   return (
-    <main className="min-h-screen min-w-screen flex items-center">
+    <main className="min-h-screen min-w-screen flex items-center py-10">
       <div className="flex w-full justify-between flex-wrap">
         <div className="w-full sm:w-1/2">
           <img src={logoImage} alt="PetPal" className="w-72 mx-auto" />
@@ -33,6 +34,19 @@ const Login = () => {
           <div className="w-4/5 mx-auto">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+                <FormField
+                  control={form.control}
+                  name="fullname"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Full Name</FormLabel>
+                      <FormControl>
+                        <Input placeholder="Your Name" {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <FormField
                   control={form.control}
                   name="email"
@@ -60,14 +74,14 @@ const Login = () => {
                   )}
                 />
                 <Button type="submit" className="w-full rounded-full bg-gradient-to-r from-[#036DA1] via-[#64A1B7] to-[#C6D6CE] hover:from-[#036DA1]/90 hover:to-[#C6D6CE]/90">
-                  Sign In
+                  Sign Up
                 </Button>
               </form>
             </Form>
             <h1 className="text-center my-5">
-              Don’t have an account?{" "}
-              <Link to={"/register"} className="text-[#036DA1] hover:text-[#64A1B7]">
-                Sign Up
+              Already have an account?{" "}
+              <Link to={"/login"} className="text-[#036DA1] hover:text-[#64A1B7]">
+                Sign In
               </Link>
             </h1>
           </div>
@@ -80,4 +94,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;
