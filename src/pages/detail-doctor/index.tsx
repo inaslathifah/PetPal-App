@@ -29,13 +29,13 @@ const DetailDoctor = () => {
     <Layout>
       <div className="w-4/5 mx-auto my-10">
         <h1 className="text-2xl font-bold my-5">Clinic 1</h1>
-        <div className="w-full shadow-md rounded-lg p-10 flex gap-10">
-          <div className="w-1/5 h-64">
+        <div className="w-full shadow-md rounded-lg p-5 sm:p-10 flex sm:justify-center md:gap-4 lg:gap-10 flex-wrap">
+          <div className="md:w-[30%] lg:w-1/5 h-64">
             <img src="https://source.unsplash.com/random?doctor" alt="doctor" className="w-full h-full object-cover rounded-md" />
           </div>
-          <div className="w-4/5">
+          <div className="md:w-[65%] lg:w-[75%]">
             <h1 className="text-2xl font-semibold mb-3">Drh. John Doe</h1>
-            <div className="grid grid-cols-2 gap-x-3 w-1/2">
+            <div className="grid grid-cols-2 gap-x-3 w-full sm:w-1/2">
               <div className="border-r border-r-slate-400">
                 <h1 className="text-[#777676]">Price</h1>
                 <h1 className="text-[#777676]">Rp. 100.000</h1>
@@ -47,7 +47,7 @@ const DetailDoctor = () => {
             </div>
             <div className="my-10">
               <h1 className="text-2xl font-semibold">About</h1>
-              <p className="text-[#777676] w-4/5 text-justify">
+              <p className="text-[#777676] lg:w-4/5 text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora facilis necessitatibus neque, nostrum sequi aliquid iste harum accusamus itaque perferendis autem ea optio dignissimos tenetur? Officiis aliquid dolorum
                 molestias.
               </p>
