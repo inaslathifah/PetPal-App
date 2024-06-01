@@ -22,7 +22,6 @@ type coordinateType = {
 };
 
 const EditProfile = () => {
-  const position: any = [-6.2, 106.816];
   const [map, setMap] = useState<any>(null);
   const [coords, setCoords] = useState<coordinateType>({ lat: 0, lng: 0 });
 
@@ -52,6 +51,30 @@ const EditProfile = () => {
     },
   });
 
+  useEffect(() => {
+    form.setValue("koordinat", `${lat?.toFixed(3)}, ${lng?.toFixed(3)}` as string);
+  }, [lat, lng]);
+
+  // const inputElement = document.getElementById("upload") as HTMLInputElement;
+  // console.log(inputElement.files);
+  const inputElementWatch = form.watch(["profile_picture"]);
+
+  const [previewUrl, setPreviewUrl] = useState<string | null | any>(null);
+
+  useEffect(() => {
+    // inputElement?.addEventListener("change", () => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setPreviewUrl(reader.result);
+    };
+
+    if (inputElementWatch[0]) reader.readAsDataURL(inputElementWatch[0][0]);
+    // if (inputElement && inputElement.files && inputElement.files.length > 0) {
+    //   reader.readAsDataURL(inputElement.files[0]);
+    // }
+    // });
+  }, [inputElementWatch]);
+
   function onSubmit(values: z.infer<typeof editUserSchema>) {
     console.log(values);
   }
@@ -61,7 +84,7 @@ const EditProfile = () => {
       <div className="flex items-center justify-center sm:justify-start flex-wrap gap-5 sm:gap-10 w-4/5 mx-auto my-10">
         <div className="relative">
           <Avatar className="w-40 h-40 sm:w-60 sm:h-60">
-            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarImage src={`${previewUrl && previewUrl}`} className="w-full h-full object-cover" />
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
           <label htmlFor="upload">
@@ -139,7 +162,7 @@ const EditProfile = () => {
                   control={form.control}
                   name="koordinat"
                   render={({ field }) => (
-                    <FormItem className="mb-4">
+                    <FormItem className="mb-7">
                       <FormLabel>Koordinat </FormLabel>
                       <Dialog>
                         <DialogTrigger className="hover:text-slate-400 text-xs">Select Coordinate</DialogTrigger>
@@ -149,21 +172,29 @@ const EditProfile = () => {
                             <DialogDescription>cari alamat anda di kolom pencarian lalu pilih koordinat dengan cara klik tepat pada alamat anda di peta</DialogDescription>
                           </DialogHeader>
                           <div>
-                            <MapContainer center={position} zoom={13} style={{ height: "50vh" }} ref={setMap}>
+                            <MapContainer center={[-6.2, 106.816]} zoom={13} style={{ height: "50vh" }} ref={setMap}>
                               <TileLayer attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                               <Marker position={[lat, lng]} icon={customIcon} />
                             </MapContainer>
                             {lat && (
                               <div>
-                                <b>latitude</b>: {lat?.toFixed(4)} <br />
-                                <b>longitude</b>: {lng?.toFixed(4)}
+                                <b>latitude</b>: {lat?.toFixed(3)} <br />
+                                <b>longitude</b>: {lng?.toFixed(3)}
                               </div>
                             )}
                           </div>
                         </DialogContent>
                       </Dialog>
+                      <div className="flex gap-3">
+                        <h1>
+                          <b>latitude</b>: {lat?.toFixed(3)}
+                        </h1>
+                        <h1>
+                          <b>longitude</b>: {lng?.toFixed(3)}
+                        </h1>
+                      </div>
                       <FormControl>
-                        <Input placeholder="Your Address Koordinat" {...field} />
+                        <Input type="hidden" placeholder="Your Address Koordinat" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
