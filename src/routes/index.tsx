@@ -9,6 +9,7 @@ import EditProfile from "@/pages/edit-profile";
 import AllProducts from "@/pages/products";
 import DetailProducts from "@/pages/detail-products/detail-product";
 import Admin from "@/pages/admin";
+import ClinicLists from "@/pages/clinic-lists";
 import AddEditProducts from "@/pages/admin/module/add-edit-product";
 import ClinicLists from "@/pages/clinic-lists";
 
