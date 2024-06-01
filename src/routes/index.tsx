@@ -10,6 +10,7 @@ import AllProducts from "@/pages/products";
 import DetailProducts from "@/pages/detail-products/detail-product";
 import Admin from "@/pages/admin";
 import AddEditProducts from "@/pages/admin/module/add-edit-product";
+import DetailDoctor from "@/pages/detail-doctor";
 import ClinicLists from "@/pages/clinic-lists";
 
 const App = () => {
@@ -48,6 +49,10 @@ const App = () => {
         {
           path: "/clinic-lists",
           element: <ClinicLists />,
+        },
+        {
+          path: "/detail-doctor/:id",
+          element: <DetailDoctor />,
         },
         {
           path: "/admin/products/:id",
