@@ -11,7 +11,7 @@ const ClinicCard: FC<clinicCardProps> = ({ image, title, description }) => {
   return (
     <div>
       <Card className="flex p-3">
-        <div className="w-full">
+        <div className="w-full h-36">
           <img src={image} alt="clinic" className="w-full h-full object-cover rounded-md" />
         </div>
         <CardHeader>
