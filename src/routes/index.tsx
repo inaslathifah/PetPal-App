@@ -10,6 +10,7 @@ import AllProducts from "@/pages/products";
 import DetailProducts from "@/pages/detail-products/detail-product";
 import Admin from "@/pages/admin";
 import AddEditProducts from "@/pages/admin/module/add-edit-product";
+import ClinicLists from "@/pages/clinic-lists";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -43,6 +44,10 @@ const App = () => {
         {
           path: "/admin",
           element: <Admin />,
+        },
+        {
+          path: "/clinic-lists",
+          element: <ClinicLists />,
         },
         {
           path: "/admin/products/:id",
