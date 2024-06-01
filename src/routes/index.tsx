@@ -9,6 +9,7 @@ import EditProfile from "@/pages/edit-profile";
 import AllProducts from "@/pages/products";
 import DetailProducts from "@/pages/detail-products/detail-product";
 import Admin from "@/pages/admin";
+import AddEditProducts from "@/pages/admin/module/add-edit-product";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -28,14 +29,6 @@ const App = () => {
           element: <Register />,
         },
         {
-          path: "/admin/products/:id",
-          element: <DetailProductByAdmin />,
-        },
-        {
-          path: "/edit-profile",
-          element: <EditProfile />,
-        },
-        {
           path: "/products",
           element: <AllProducts />,
         },
@@ -44,12 +37,24 @@ const App = () => {
           element: <DetailProducts />,
         },
         {
-          path: "/admin/products/:id",
-          element: <DetailProductByAdmin />,
+          path: "/edit-profile",
+          element: <EditProfile />,
         },
         {
           path: "/admin",
           element: <Admin />,
+        },
+        {
+          path: "/admin/products/:id",
+          element: <DetailProductByAdmin />,
+        },
+        {
+          path: "/admin/products/:id",
+          element: <DetailProductByAdmin />,
+        },
+        {
+          path: "/admin/products/add-edit/:id",
+          element: <AddEditProducts />,
         },
       ],
     },
