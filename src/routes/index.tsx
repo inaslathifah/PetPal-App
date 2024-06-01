@@ -8,6 +8,7 @@ import DetailProductByAdmin from "@/pages/admin/module/detail-product";
 import EditProfile from "@/pages/edit-profile";
 import AllProducts from "@/pages/products";
 import DetailProducts from "@/pages/detail-products/detail-product";
+import Admin from "@/pages/admin";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -41,6 +42,14 @@ const App = () => {
         {
           path: "/products/:id",
           element: <DetailProducts />,
+        },
+        {
+          path: "/admin/products/:id",
+          element: <DetailProductByAdmin />,
+        },
+        {
+          path: "/admin",
+          element: <Admin />,
         },
       ],
     },
