@@ -10,3 +10,10 @@ export interface ProductFormProps {
   defaultValues?: ProductFormValues;
   isEditing?: boolean;
 }
+
+export interface IProductListData {
+  id: number;
+  product_picture: string;
+  product_name: string;
+  price: number;
+}
