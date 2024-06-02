@@ -21,7 +21,7 @@ type coordinateType = {
   lng: number;
 };
 
-const EditProfile = () => {
+const EditProfileAdmin = () => {
   const [map, setMap] = useState<any>(null);
   const [coords, setCoords] = useState<coordinateType>({ lat: 0, lng: 0 });
 
@@ -55,24 +55,17 @@ const EditProfile = () => {
     form.setValue("koordinat", `${lat?.toFixed(3)}, ${lng?.toFixed(3)}` as string);
   }, [lat, lng]);
 
-  // const inputElement = document.getElementById("upload") as HTMLInputElement;
-  // console.log(inputElement.files);
   const inputElementWatch = form.watch(["profile_picture"]);
 
   const [previewUrl, setPreviewUrl] = useState<string | null | any>(null);
 
   useEffect(() => {
-    // inputElement?.addEventListener("change", () => {
     const reader = new FileReader();
     reader.onloadend = () => {
       setPreviewUrl(reader.result);
     };
 
-    if (inputElementWatch[0]) reader.readAsDataURL(inputElementWatch[0][0]);
-    // if (inputElement && inputElement.files && inputElement.files.length > 0) {
-    //   reader.readAsDataURL(inputElement.files[0]);
-    // }
-    // });
+    if (inputElementWatch && inputElementWatch[0]) reader.readAsDataURL(inputElementWatch[0][0]);
   }, [inputElementWatch]);
 
   function onSubmit(values: z.infer<typeof editUserSchema>) {
@@ -213,16 +206,63 @@ const EditProfile = () => {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" className="rounded-md bg-[#3487AC] hover:bg-[#3487AC]/80 float-right">
-                  Edit Profile
-                </Button>
+                <div className="flex gap-3 justify-end">
+                  <Button type="button" className="rounded-md bg-[#3487AC] hover:bg-[#3487AC]/80">
+                    Add New Doctor
+                  </Button>
+                  <Button type="submit" className="rounded-md bg-[#3487AC] hover:bg-[#3487AC]/80">
+                    Edit Profile
+                  </Button>
+                </div>
               </div>
             </div>
           </form>
         </Form>
       </div>
+
+      <div className="w-4/5 mx-auto my-5 shadow-md rounded-lg p-5 sm:p-10 flex sm:justify-center md:gap-4 lg:gap-10 flex-wrap">
+        <div className="md:w-[30%] lg:w-1/5 h-64">
+          <img src="https://source.unsplash.com/random?doctor" alt="doctor" className="w-full h-full object-cover rounded-md" />
+        </div>
+        <div className="md:w-[65%] lg:w-[75%]">
+          <h1 className="text-2xl font-semibold mb-3">Drh. John Doe</h1>
+          <div className="grid grid-cols-2 gap-x-3 w-full sm:w-1/2">
+            <div className="border-r border-r-slate-400">
+              <h1 className="text-[#777676]">Price</h1>
+              <h1 className="text-[#777676]">Rp. 100.000</h1>
+            </div>
+            <div>
+              <h1 className="text-[#777676]">Location</h1>
+              <h1 className="text-[#777676]">Bandung, West Java</h1>
+            </div>
+          </div>
+          <div className="my-10">
+            <h1 className="text-2xl font-semibold">About</h1>
+            <p className="text-[#777676] lg:w-4/5 text-justify">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta tempora facilis necessitatibus neque, nostrum sequi aliquid iste harum accusamus itaque perferendis autem ea optio dignissimos tenetur? Officiis aliquid dolorum
+              molestias.
+            </p>
+          </div>
+          <div>
+            <h1 className="text-xl font-semibold my-5">Available days</h1>
+            <h1>Senin, Selasa, Rabu, Kamis, Jum'at, Sabtu, Minggu</h1>
+          </div>
+          <div>
+            <h1 className="text-xl font-semibold my-5">Service</h1>
+            <ul>
+              <li>Medical Checkup</li>
+              <li>Konsultasi Online</li>
+            </ul>
+          </div>
+          <div className="flex gap-3 justify-end">
+            <Button type="submit" className="rounded-md bg-[#3487AC] hover:bg-[#3487AC]/80">
+              Edit Doctor
+            </Button>
+          </div>
+        </div>
+      </div>
     </Layout>
   );
 };
 
-export default EditProfile;
+export default EditProfileAdmin;

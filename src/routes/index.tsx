@@ -16,6 +16,7 @@ import Chat from "@/pages/chat";
 import ServiceRequests from "@/pages/admin/module/service-requests";
 import Sales from "@/pages/admin/module/sales";
 import History from "@/pages/history";
+import EditProfileAdmin from "@/pages/admin/module/edit-profile";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -49,6 +50,10 @@ const App = () => {
         {
           path: "/admin",
           element: <Admin />,
+        },
+        {
+          path: "/admin/edit-profile",
+          element: <EditProfileAdmin />,
         },
         {
           path: "/clinic-lists",
