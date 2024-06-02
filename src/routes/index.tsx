@@ -12,6 +12,7 @@ import Admin from "@/pages/admin";
 import AddEditProducts from "@/pages/admin/module/add-edit-product";
 import DetailDoctor from "@/pages/detail-doctor";
 import ClinicLists from "@/pages/clinic-lists";
+import Chat from "@/pages/chat";
 import ServiceRequests from "@/pages/admin/module/service-requests";
 import Sales from "@/pages/admin/module/sales";
 
@@ -67,6 +68,10 @@ const App = () => {
         {
           path: "/admin/products/add-edit/:id",
           element: <AddEditProducts />,
+        },
+        {
+          path: "/chat",
+          element: <Chat />,
         },
         {
           path: "/admin/service-requests",
