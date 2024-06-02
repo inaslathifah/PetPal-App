@@ -22,7 +22,7 @@ const ServiceRequests = () => {
               className="w-[100px] h-[100px] ring-2 rounded-full"
             />
           </div>
-          <div className="flex items-center justify-center flex-col lg:items-start lg:justify-start">
+          <div className="flex items-center justify-center flex-col lg:items-start lg:justify-startj">
             <h1 className="text-lg font-semibold">Drh. H.Naim</h1>
             <p>Bogor,Available on weekdays</p>
             <Button className="mt-1">Edit Profile</Button>
