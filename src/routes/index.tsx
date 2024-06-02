@@ -13,6 +13,7 @@ import AddEditProducts from "@/pages/admin/module/add-edit-product";
 import DetailDoctor from "@/pages/detail-doctor";
 import ClinicLists from "@/pages/clinic-lists";
 import ServiceRequests from "@/pages/admin/module/service-requests";
+import Sales from "@/pages/admin/module/sales";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -70,6 +71,10 @@ const App = () => {
         {
           path: "/admin/service-requests",
           element: <ServiceRequests />,
+        },
+        {
+          path: "/admin/sales",
+          element: <Sales />,
         },
       ],
     },
