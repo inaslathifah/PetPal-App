@@ -15,6 +15,7 @@ import ClinicLists from "@/pages/clinic-lists";
 import Chat from "@/pages/chat";
 import ServiceRequests from "@/pages/admin/module/service-requests";
 import Sales from "@/pages/admin/module/sales";
+import History from "@/pages/history";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -80,6 +81,10 @@ const App = () => {
         {
           path: "/admin/sales",
           element: <Sales />,
+        },
+        {
+          path: "/history",
+          element: <History />,
         },
       ],
     },
