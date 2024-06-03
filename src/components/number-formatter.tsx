@@ -13,4 +13,8 @@ const NumberFormatter: React.FC<NumberFormatterProps> = ({ value }) => {
   );
 };
 
+<<<<<<< HEAD
 export default NumberFormatter;
+=======
+export default NumberFormatter;
+>>>>>>> 6757380 (feat: slicing payment)

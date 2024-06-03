@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import * as React from "react";
@@ -11,6 +12,21 @@ const Select = SelectPrimitive.Root;
 const SelectGroup = SelectPrimitive.Group;
 
 const SelectValue = SelectPrimitive.Value;
+=======
+"use client"
+
+import * as React from "react"
+import * as SelectPrimitive from "@radix-ui/react-select"
+import { Check, ChevronDown, ChevronUp } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Select = SelectPrimitive.Root
+
+const SelectGroup = SelectPrimitive.Group
+
+const SelectValue = SelectPrimitive.Value
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
@@ -29,8 +45,13 @@ const SelectTrigger = React.forwardRef<
       <ChevronDown className="h-4 w-4 opacity-50" />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
+<<<<<<< HEAD
 ));
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+=======
+))
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectScrollUpButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
@@ -46,8 +67,13 @@ const SelectScrollUpButton = React.forwardRef<
   >
     <ChevronUp className="h-4 w-4" />
   </SelectPrimitive.ScrollUpButton>
+<<<<<<< HEAD
 ));
 SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
+=======
+))
+SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectScrollDownButton = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
@@ -63,9 +89,15 @@ const SelectScrollDownButton = React.forwardRef<
   >
     <ChevronDown className="h-4 w-4" />
   </SelectPrimitive.ScrollDownButton>
+<<<<<<< HEAD
 ));
 SelectScrollDownButton.displayName =
   SelectPrimitive.ScrollDownButton.displayName;
+=======
+))
+SelectScrollDownButton.displayName =
+  SelectPrimitive.ScrollDownButton.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectContent = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Content>,
@@ -96,8 +128,13 @@ const SelectContent = React.forwardRef<
       <SelectScrollDownButton />
     </SelectPrimitive.Content>
   </SelectPrimitive.Portal>
+<<<<<<< HEAD
 ));
 SelectContent.displayName = SelectPrimitive.Content.displayName;
+=======
+))
+SelectContent.displayName = SelectPrimitive.Content.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectLabel = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Label>,
@@ -108,8 +145,13 @@ const SelectLabel = React.forwardRef<
     className={cn("py-1.5 pl-8 pr-2 text-sm font-semibold", className)}
     {...props}
   />
+<<<<<<< HEAD
 ));
 SelectLabel.displayName = SelectPrimitive.Label.displayName;
+=======
+))
+SelectLabel.displayName = SelectPrimitive.Label.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
@@ -131,8 +173,13 @@ const SelectItem = React.forwardRef<
 
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
   </SelectPrimitive.Item>
+<<<<<<< HEAD
 ));
 SelectItem.displayName = SelectPrimitive.Item.displayName;
+=======
+))
+SelectItem.displayName = SelectPrimitive.Item.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 const SelectSeparator = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Separator>,
@@ -143,8 +190,13 @@ const SelectSeparator = React.forwardRef<
     className={cn("-mx-1 my-1 h-px bg-muted", className)}
     {...props}
   />
+<<<<<<< HEAD
 ));
 SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
+=======
+))
+SelectSeparator.displayName = SelectPrimitive.Separator.displayName
+>>>>>>> 6757380 (feat: slicing payment)
 
 export {
   Select,
@@ -157,4 +209,8 @@ export {
   SelectSeparator,
   SelectScrollUpButton,
   SelectScrollDownButton,
+<<<<<<< HEAD
 };
+=======
+}
+>>>>>>> 6757380 (feat: slicing payment)
