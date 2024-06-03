@@ -9,3 +9,13 @@ export const getProducts = async (params?: string) => {
     throw error;
   }
 };
+
+export const getDetailProduct = async (id: number) => {
+  try {
+    const response = await axiosWithConfig.get(`/products/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
+  }
+};
