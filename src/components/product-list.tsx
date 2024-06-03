@@ -1,5 +1,5 @@
-import { IProductListData } from "../../utils/apis/products";
 import ProductCard from "@/components/product-card";
+import { IProductListData } from "@/utils/apis/products";
 
 interface ProductListProps {
   data: IProductListData[];
