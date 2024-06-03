@@ -17,6 +17,7 @@ import Sales from "@/pages/admin/module/sales";
 import History from "@/pages/history";
 import EditProfileAdmin from "@/pages/admin/module/edit-profile";
 import DetailProduct from "@/pages/products/detail-product";
+import Payment from "@/pages/transaction";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -90,6 +91,10 @@ const App = () => {
         {
           path: "/history",
           element: <History />,
+        },
+        {
+          path: "/payment",
+          element: <Payment />,
         },
       ],
     },
