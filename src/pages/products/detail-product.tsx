@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Layout from "@/components/layout";
 import NumberFormatter from "@/components/number-formatter";
 
 import { IProductDetail, getProductDetail } from "@/utils/apis/products";
+import { Link, useParams } from "react-router-dom";
 
 const DetailProduct: React.FC = () => {
+  let { id } = useParams<{ id: string }>();
   const [detailProduct, setDetailProduct] = useState<IProductDetail | null>(
     null
   );
   const [quantity, setQuantity] = useState(1);
   const fetchData = async () => {
     try {
-      const detailProduct = await getProductDetail(5);
+      const detailProduct = await getProductDetail(Number(id));
       setDetailProduct(detailProduct.data);
     } catch (error) {
       console.error("Failed to fetch product details:", error);
@@ -70,9 +72,12 @@ const DetailProduct: React.FC = () => {
               +
             </Button>
           </div>
-          <Button className="w-full bg-blue-500 text-white py-2 rounded">
+          <Link
+            to={"/payment"}
+            className={buttonVariants({ variant: "default" })}
+          >
             Pay Now
-          </Button>
+          </Link>
         </CardContent>
       </Card>
     </Layout>
