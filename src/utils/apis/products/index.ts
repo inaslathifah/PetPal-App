@@ -1,4 +1,4 @@
-import { getDetailProduct, getProducts } from "./api";
+import { getProductDetail, getProducts } from "./api";
 import { productSchema } from "./scheme";
 import {
   ProductFormValues,
@@ -7,7 +7,7 @@ import {
   IProductDetail,
 } from "./interfaces";
 
-export { productSchema, getProducts, getDetailProduct };
+export { productSchema, getProducts, getProductDetail };
 export type {
   ProductFormValues,
   ProductFormProps,
