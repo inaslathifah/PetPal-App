@@ -25,7 +25,7 @@ const AllProducts = () => {
     const fetchData = async () => {
       try {
         const products = await getProducts(
-          `${page && `page=${page}`}${sort && `sort=${sort}`}`
+          `${page && `page=${page}`}${sort && `&sort=${sort}`}`
         );
         setData(products.data);
       } catch (error) {

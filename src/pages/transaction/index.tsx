@@ -10,7 +10,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { Select, SelectItem } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 
 const Payment: FC = () => {
@@ -117,9 +123,21 @@ const Payment: FC = () => {
           <label className="font-semibold md:text-base text-sm">
             Metode Pembayaran
           </label>
-          <Select required name="bank_account" value={pembayaran.bank_account}>
-            <SelectItem value="BCA">BCA</SelectItem>
-            {/* Tambahkan metode pembayaran lain di sini */}
+          <Select
+            required
+            name="bank_account"
+            value={pembayaran.bank_account}
+            onValueChange={(value) =>
+              setPembayaran((prev) => ({ ...prev, bank_account: value }))
+            }
+          >
+            <SelectTrigger className="p-2 bg-[#F6F6F6] rounded-md">
+              <SelectValue placeholder="Pilih Metode Pembayaran" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="BCA">BCA</SelectItem>
+              {/* Tambahkan metode pembayaran lain di sini */}
+            </SelectContent>
           </Select>
           <div className="mt-4">
             <span className="text-sm font-bold">Total Bayar : </span>
