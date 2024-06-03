@@ -15,6 +15,8 @@ import ClinicLists from "@/pages/clinic-lists";
 import Chat from "@/pages/chat";
 import ServiceRequests from "@/pages/admin/module/service-requests";
 import Sales from "@/pages/admin/module/sales";
+import History from "@/pages/history";
+import EditProfileAdmin from "@/pages/admin/module/edit-profile";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -50,6 +52,10 @@ const App = () => {
           element: <Admin />,
         },
         {
+          path: "/admin/edit-profile",
+          element: <EditProfileAdmin />,
+        },
+        {
           path: "/clinic-lists",
           element: <ClinicLists />,
         },
@@ -80,6 +86,10 @@ const App = () => {
         {
           path: "/admin/sales",
           element: <Sales />,
+        },
+        {
+          path: "/history",
+          element: <History />,
         },
       ],
     },
