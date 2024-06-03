@@ -65,15 +65,15 @@ const App = () => {
           element: <DetailDoctor />,
         },
         {
-          path: "/admin/products/:id",
+          path: "/admin/products/:product_id",
           element: <DetailProductByAdmin />,
         },
         {
-          path: "/admin/products/:id",
+          path: "/admin/products/:product_id",
           element: <DetailProductByAdmin />,
         },
         {
-          path: "/admin/products/add-edit/:id",
+          path: "/admin/products/add-edit/:product_id",
           element: <AddEditProducts />,
         },
         {
